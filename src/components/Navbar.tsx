@@ -96,7 +96,7 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <CTAButton href="#membership" size="lg" className="mt-6 w-full">
+          <CTAButton href="#membership" size="lg" className="mt-6 w-full" onClick={() => setOpen(false)}>
             Join Now
           </CTAButton>
         </div>

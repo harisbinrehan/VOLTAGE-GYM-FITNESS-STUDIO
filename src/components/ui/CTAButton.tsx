@@ -10,6 +10,7 @@ type CTAButtonProps = {
   size?: "md" | "lg";
   className?: string;
   external?: boolean;
+  onClick?: () => void;
 };
 
 const base =
@@ -33,6 +34,7 @@ export function CTAButton({
   size = "md",
   className,
   external = false,
+  onClick,
 }: CTAButtonProps) {
   const classes = cn(base, variants[variant], sizes[size], className);
 
@@ -44,6 +46,7 @@ export function CTAButton({
           className={classes}
           target={href.startsWith("http") ? "_blank" : undefined}
           rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+          onClick={onClick}
         >
           {children}
         </a>
@@ -53,7 +56,7 @@ export function CTAButton({
 
   return (
     <Magnetic>
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} onClick={onClick}>
         {children}
       </Link>
     </Magnetic>
