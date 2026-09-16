@@ -212,12 +212,24 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
+export type MembershipPlan = {
+  name: string;
+  price: string;
+  note?: string;
+};
+
 export const membership = {
-  verified: false,
+  verified: true,
   heading: "Membership built around you.",
-  body:
-    "Voltage has not published membership pricing publicly. Get current rates and package options directly from the team.",
-  ctaLabel: "Ask About Membership",
+  body: "Straightforward pricing — pick the package that fits, no hidden fees.",
+  ctaLabel: "Join Voltage",
+  currency: "PKR",
+  admissionFee: "100% Off",
+  plans: [
+    { name: "Couple Package", note: "2 People", price: "10,000" },
+    { name: "Student Package", note: "Only Boys", price: "4,500" },
+    { name: "3 Months Package", note: "90 Days", price: "15,000" },
+  ] satisfies MembershipPlan[],
 };
 
 export const galleryCategories = [

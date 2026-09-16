@@ -48,14 +48,17 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-void via-void/70 to-void/40" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-14 pt-28 sm:px-8 sm:pb-28 sm:pt-40">
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-5 font-display text-xs tracking-[0.35em] text-voltage uppercase"
+          className="mb-5 inline-flex items-center gap-2.5 border border-bone/20 bg-void/50 px-3.5 py-1.5 backdrop-blur-md"
         >
-          {brandCopy.heroEyebrow}
-        </motion.p>
+          <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-voltage" />
+          <span className="font-display text-xs tracking-[0.3em] text-bone uppercase">
+            {brandCopy.heroEyebrow}
+          </span>
+        </motion.div>
 
         <h1 className="font-display text-[16vw] leading-[1.05] uppercase text-bone sm:text-[9rem] md:text-[10rem] lg:text-[11rem]">
           {brandCopy.heroHeadline.map((word, i) => (

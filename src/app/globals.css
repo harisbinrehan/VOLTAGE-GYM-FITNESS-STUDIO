@@ -78,6 +78,22 @@ body {
   background: radial-gradient(circle, var(--color-voltage) 0%, transparent 70%);
 }
 
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(228, 39, 42, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(228, 39, 42, 0);
+    transform: scale(1.06);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
 /* Keep the browser's default cursor everywhere — no custom/pointer cursor overrides. */
 * {
   cursor: default !important;
