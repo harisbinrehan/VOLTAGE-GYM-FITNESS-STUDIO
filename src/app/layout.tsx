@@ -35,6 +35,7 @@ export const metadata: Metadata = {
 
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import { CustomCursor } from "@/components/ui/CustomCursor";
+import { SplashScreen } from "@/components/ui/SplashScreen";
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   const schema = buildLocalBusinessSchema();
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${anton.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-void text-bone">
+        <SplashScreen />
         <SmoothScroll>
           <CustomCursor />
           {children}
