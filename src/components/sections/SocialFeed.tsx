@@ -1,3 +1,9 @@
+"use client";
+
+import { useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import Video from "yet-another-react-lightbox/plugins/video";
+import "yet-another-react-lightbox/styles.css";
 import { FacebookIcon, InstagramIcon } from "@/components/ui/SocialIcons";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PlaceholderMedia } from "@/components/ui/PlaceholderMedia";
@@ -5,7 +11,11 @@ import { GalleryVideo } from "@/components/ui/GalleryVideo";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { gallery, contact, brandAssets } from "@/data/gym";
 
+const videoItems = gallery.filter((item) => item.video);
+
 export function SocialFeed() {
+  const [lightboxIndex, setLightboxIndex] = useState(-1);
+
   return (
     <section id="gallery" className="relative bg-void py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
@@ -49,6 +59,7 @@ export function SocialFeed() {
                   label={item.caption}
                   category={item.category}
                   className="w-full"
+                  onOpen={() => setLightboxIndex(videoItems.indexOf(item))}
                 />
               ) : (
                 <PlaceholderMedia
@@ -62,6 +73,20 @@ export function SocialFeed() {
           ))}
         </div>
       </div>
+
+      <Lightbox
+        open={lightboxIndex >= 0}
+        close={() => setLightboxIndex(-1)}
+        index={lightboxIndex}
+        slides={videoItems.map((item) => ({
+          type: "video" as const,
+          width: 1280,
+          height: 1280,
+          sources: [{ src: item.video!, type: "video/mp4" }],
+        }))}
+        plugins={[Video]}
+        video={{ autoPlay: true, controls: true, playsInline: true }}
+      />
     </section>
   );
 }

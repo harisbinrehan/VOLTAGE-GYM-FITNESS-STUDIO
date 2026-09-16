@@ -77,3 +77,8 @@ body {
 .voltage-glow {
   background: radial-gradient(circle, var(--color-voltage) 0%, transparent 70%);
 }
+
+/* Keep the browser's default cursor everywhere — no custom/pointer cursor overrides. */
+* {
+  cursor: default !important;
+}
