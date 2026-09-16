@@ -21,6 +21,15 @@ export const gymMeta = {
   verified: true,
 };
 
+// Confirmed via the gym's own logo/brand asset: red checkmark-V mark on a
+// dark charcoal textured background, white/cream wordmark, "Gym & Fitness
+// Studio" script tagline, and the community hashtag below.
+export const brandAssets = {
+  hashtag: "#voltageGym",
+  hashtagPrompt: "Use this hashtag to become a part of our community",
+  verified: true,
+};
+
 export const contact = {
   address: {
     line1: "2nd Floor, Crystal Plaza",

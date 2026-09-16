@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 type CTAButtonProps = {
   href: string;
   children: ReactNode;
-  variant?: "primary" | "secondary" | "ghost" | "dark" | "darkOutline";
+  variant?: "primary" | "secondary" | "ghost";
   size?: "md" | "lg";
   className?: string;
   external?: boolean;
@@ -15,11 +15,9 @@ const base =
   "group relative inline-flex items-center justify-center gap-2 font-display uppercase tracking-[0.08em] transition-transform duration-300 ease-out focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-voltage active:scale-[0.98]";
 
 const variants: Record<NonNullable<CTAButtonProps["variant"]>, string> = {
-  primary: "bg-voltage text-void hover:bg-bone",
+  primary: "bg-voltage text-bone hover:bg-voltage-dim",
   secondary: "bg-transparent text-bone border border-bone/40 hover:border-voltage hover:text-voltage",
   ghost: "bg-transparent text-bone hover:text-voltage",
-  dark: "bg-void text-bone hover:bg-ink hover:text-voltage",
-  darkOutline: "bg-transparent border border-void text-void hover:bg-void hover:text-voltage",
 };
 
 const sizes: Record<NonNullable<CTAButtonProps["size"]>, string> = {
