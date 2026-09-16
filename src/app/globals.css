@@ -33,12 +33,15 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--color-void);
+  overflow-x: hidden;
 }
 
 body {
   background: var(--color-void);
   color: var(--color-bone);
   font-family: var(--font-body);
+  overflow-x: hidden;
 }
 
 .font-display {

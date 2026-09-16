@@ -1,6 +1,7 @@
 import { FacebookIcon, InstagramIcon } from "@/components/ui/SocialIcons";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PlaceholderMedia } from "@/components/ui/PlaceholderMedia";
+import { GalleryVideo } from "@/components/ui/GalleryVideo";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { gallery, contact, brandAssets } from "@/data/gym";
 
@@ -42,12 +43,21 @@ export function SocialFeed() {
         <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {gallery.map((item, i) => (
             <FadeIn key={i} delay={i * 0.05}>
-              <PlaceholderMedia
-                label={item.caption}
-                category={item.category}
-                aspect="square"
-                className="w-full"
-              />
+              {item.video ? (
+                <GalleryVideo
+                  src={item.video}
+                  label={item.caption}
+                  category={item.category}
+                  className="w-full"
+                />
+              ) : (
+                <PlaceholderMedia
+                  label={item.caption}
+                  category={item.category}
+                  aspect="square"
+                  className="w-full"
+                />
+              )}
             </FadeIn>
           ))}
         </div>

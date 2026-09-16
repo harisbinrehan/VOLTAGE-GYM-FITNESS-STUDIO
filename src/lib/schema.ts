@@ -1,9 +1,11 @@
 import { contact, gymMeta } from "@/data/gym";
 
 const verifiedHours: { days: string[]; open: string; close: string }[] = [
-  { days: ["Monday", "Tuesday", "Wednesday"], open: "07:00", close: "23:30" },
-  { days: ["Thursday"], open: "07:00", close: "23:00" },
-  { days: ["Friday"], open: "07:00", close: "23:30" },
+  {
+    days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    open: "07:00",
+    close: "12:00",
+  },
 ];
 
 export function buildLocalBusinessSchema() {

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { type ReactNode } from "react";
 import { cn } from "@/lib/cn";
+import { Magnetic } from "@/components/ui/Magnetic";
 
 type CTAButtonProps = {
   href: string;
@@ -37,20 +38,24 @@ export function CTAButton({
 
   if (external || href.startsWith("http") || href.startsWith("tel:") || href.startsWith("mailto:")) {
     return (
-      <a
-        href={href}
-        className={classes}
-        target={href.startsWith("http") ? "_blank" : undefined}
-        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-      >
-        {children}
-      </a>
+      <Magnetic>
+        <a
+          href={href}
+          className={classes}
+          target={href.startsWith("http") ? "_blank" : undefined}
+          rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+        >
+          {children}
+        </a>
+      </Magnetic>
     );
   }
 
   return (
-    <Link href={href} className={classes}>
-      {children}
-    </Link>
+    <Magnetic>
+      <Link href={href} className={classes}>
+        {children}
+      </Link>
+    </Magnetic>
   );
 }

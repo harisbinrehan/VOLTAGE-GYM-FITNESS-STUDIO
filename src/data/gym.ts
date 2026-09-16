@@ -58,15 +58,10 @@ export const contact = {
   },
 } as const;
 
-// Hours cross-confirmed for Mon–Fri via public directory data pulled from the
-// Facebook listing. Saturday/Sunday hours were not independently found —
-// shown as "confirm with gym" rather than guessed.
 export const hours = {
   rows: [
-    { days: "Monday – Wednesday", time: "7:00 AM – 11:30 PM", verified: true },
-    { days: "Thursday", time: "7:00 AM – 11:00 PM", verified: true },
-    { days: "Friday", time: "7:00 AM – 11:30 PM", verified: true },
-    { days: "Saturday – Sunday", time: "Confirm with gym", verified: false },
+    { days: "Monday – Saturday", time: "7:00 AM – 12:00 PM", verified: true },
+    { days: "Sunday", time: "Closed", verified: true },
   ],
 };
 
@@ -237,16 +232,36 @@ export type GalleryItem = {
   category: (typeof galleryCategories)[number];
   caption: string;
   verified: boolean;
+  video?: string;
 };
 
-// No real photography could be retrieved from the gated FB/IG pages. Slots
-// below render as branded placeholder frames — swap `src` in once real
-// photography from Voltage's Facebook/Instagram is supplied.
+// Real clips supplied directly by the gym owner (downloaded from Voltage's
+// own Facebook/Instagram, not scraped) — dropped in as-is, original crop.
 export const gallery: GalleryItem[] = [
-  { category: "Gym", caption: "[ADD GYM FLOOR PHOTO]", verified: false },
-  { category: "Training", caption: "[ADD TRAINING SESSION PHOTO]", verified: false },
+  {
+    category: "Training",
+    caption: "Assisted training session at Voltage",
+    verified: true,
+    video: "/videos/gallery/gallery-1.mp4",
+  },
+  {
+    category: "Gym",
+    caption: "Cardio floor at Voltage",
+    verified: true,
+    video: "/videos/gallery/gallery-2.mp4",
+  },
+  {
+    category: "Gym",
+    caption: "Voltage GYM & Fitness Studio signage",
+    verified: true,
+    video: "/videos/gallery/gallery-3.mp4",
+  },
+  {
+    category: "Training",
+    caption: "Dumbbell training at Voltage",
+    verified: true,
+    video: "/videos/gallery/gallery-4.mp4",
+  },
   { category: "Trainers", caption: "[ADD TRAINER PHOTO]", verified: false },
-  { category: "Community", caption: "[ADD MEMBER/COMMUNITY PHOTO]", verified: false },
-  { category: "Gym", caption: "[ADD EQUIPMENT PHOTO]", verified: false },
   { category: "Events", caption: "[ADD EVENT PHOTO]", verified: false },
 ];
