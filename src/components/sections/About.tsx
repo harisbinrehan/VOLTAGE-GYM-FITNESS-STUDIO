@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { PlaceholderMedia } from "@/components/ui/PlaceholderMedia";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { about } from "@/data/gym";
 
@@ -24,12 +24,16 @@ export function About() {
         </FadeIn>
 
         <FadeIn delay={0.15}>
-          <PlaceholderMedia
-            label="Real Voltage gym floor photography goes here"
-            category="Studio"
-            aspect="portrait"
-            className="w-full"
-          />
+          <div className="relative aspect-[3/4] w-full overflow-hidden border border-line">
+            <Image
+              src="/images/about-gym-floor.jpg"
+              alt="Training floor inside Voltage GYM & Fitness Studio"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+              priority={false}
+            />
+          </div>
         </FadeIn>
       </div>
     </section>

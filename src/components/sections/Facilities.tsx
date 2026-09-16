@@ -18,22 +18,20 @@ export function Facilities() {
 
       <div className="mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain pb-4 px-5 sm:px-8 xl:px-[calc((100vw-80rem)/2+2rem)] scroll-pl-5 sm:scroll-pl-8 xl:scroll-pl-[calc((100vw-80rem)/2+2rem)] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {facilities.map((facility, i) => (
-          <FadeIn
-            key={facility.name}
-            delay={i * 0.08}
-            className="w-[78vw] shrink-0 snap-start sm:w-[360px]"
-          >
-            <PlaceholderMedia
-              label={facility.verified ? facility.name : "Facility photo pending"}
-              category="Facility"
-              aspect="portrait"
-              className="w-full"
-            />
-            <h3 className="mt-5 font-display text-2xl uppercase tracking-wide text-bone">
-              {facility.name}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-smoke">{facility.description}</p>
-          </FadeIn>
+          <div key={facility.name} className="w-[78vw] shrink-0 snap-start sm:w-[360px]">
+            <FadeIn delay={i * 0.08}>
+              <PlaceholderMedia
+                label={facility.verified ? facility.name : "Facility photo pending"}
+                category="Facility"
+                aspect="portrait"
+                className="w-full"
+              />
+              <h3 className="mt-5 font-display text-2xl uppercase tracking-wide text-bone">
+                {facility.name}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-smoke">{facility.description}</p>
+            </FadeIn>
+          </div>
         ))}
       </div>
     </section>
