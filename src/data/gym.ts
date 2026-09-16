@@ -69,7 +69,7 @@ export const hours = {
 // original strategic copywriting for Voltage, not a quoted business claim.
 export const brandCopy = {
   heroEyebrow: "BAHRIA TOWN, LAHORE",
-  heroHeadline: ["POWER YOUR", "POTENTIAL."],
+  heroHeadline: ["GYM &", "FITNESS STUDIO"],
   heroSub:
     "A training ground for people who show up. Strength, conditioning, and one-to-one coaching in Bahria Town — built for real, measurable progress.",
   heroCtaPrimary: "Join Voltage",

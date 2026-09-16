@@ -4,8 +4,14 @@ import { motion, type Variants } from "framer-motion";
 import { type ReactNode } from "react";
 
 const variants: Variants = {
-  hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+  hidden: { opacity: 0, y: 30, scale: 0.96, filter: "blur(8px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: { duration: 1, ease: [0.16, 1, 0.3, 1] },
+  },
 };
 
 export function FadeIn({

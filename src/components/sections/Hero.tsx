@@ -57,7 +57,7 @@ export function Hero() {
           {brandCopy.heroEyebrow}
         </motion.p>
 
-        <h1 className="font-display text-[16vw] leading-[0.85] uppercase text-bone sm:text-[9rem] md:text-[10rem] lg:text-[11rem]">
+        <h1 className="font-display text-[16vw] leading-[1.05] uppercase text-bone sm:text-[9rem] md:text-[10rem] lg:text-[11rem]">
           {brandCopy.heroHeadline.map((word, i) => (
             <span key={word} className="block overflow-hidden">
               <motion.span

@@ -16,7 +16,7 @@ export function Facilities() {
         </FadeIn>
       </div>
 
-      <div className="mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain px-5 pb-4 sm:px-8 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain pb-4 pl-[max(1.25rem,calc((100vw-80rem)/2+1.25rem))] pr-[max(1.25rem,calc((100vw-80rem)/2+1.25rem))] sm:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] sm:pr-[max(2rem,calc((100vw-80rem)/2+2rem))] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {facilities.map((facility, i) => (
           <FadeIn
             key={facility.name}
