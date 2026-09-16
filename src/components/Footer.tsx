@@ -19,7 +19,10 @@ export function Footer() {
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="font-display text-2xl tracking-wide text-bone">
-              VOLT<span className="text-voltage">AGE</span>
+              <span className="text-voltage">V</span>OLTAGE
+            </p>
+            <p className="mt-1 text-[0.65rem] tracking-[0.2em] text-smoke uppercase">
+              Gym &amp; Fitness Studio
             </p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-smoke">
               Voltage GYM &amp; Fitness Studio — a training ground for people who show up,

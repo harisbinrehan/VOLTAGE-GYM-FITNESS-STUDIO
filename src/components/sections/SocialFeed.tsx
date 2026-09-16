@@ -2,7 +2,7 @@ import { FacebookIcon, InstagramIcon } from "@/components/ui/SocialIcons";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PlaceholderMedia } from "@/components/ui/PlaceholderMedia";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { gallery, contact } from "@/data/gym";
+import { gallery, contact, brandAssets } from "@/data/gym";
 
 export function SocialFeed() {
   return (
@@ -30,7 +30,16 @@ export function SocialFeed() {
           </div>
         </FadeIn>
 
-        <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        {brandAssets.verified && (
+          <FadeIn delay={0.1} className="mt-10 border border-line px-6 py-8 text-center sm:px-10">
+            <p className="text-sm text-smoke">{brandAssets.hashtagPrompt}</p>
+            <p className="mt-2 font-display text-3xl uppercase tracking-wide text-voltage sm:text-4xl">
+              {brandAssets.hashtag}
+            </p>
+          </FadeIn>
+        )}
+
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {gallery.map((item, i) => (
             <FadeIn key={i} delay={i * 0.05}>
               <PlaceholderMedia
