@@ -52,7 +52,7 @@ export function GalleryVideo({ src, label, category, className, onOpen }: Galler
         preload="none"
         aria-hidden="true"
         tabIndex={-1}
-        className="h-full w-full object-cover"
+        className="pointer-events-none h-full w-full object-cover"
       />
       {category && (
         <span className="pointer-events-none absolute left-3 top-3 font-display text-[0.65rem] tracking-[0.2em] text-voltage uppercase drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">

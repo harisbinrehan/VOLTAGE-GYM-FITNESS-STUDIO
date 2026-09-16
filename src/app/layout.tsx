@@ -42,9 +42,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${anton.variable} ${manrope.variable} h-full antialiased`}
+      className={`${anton.variable} ${manrope.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-void text-bone">
+      <body className="min-h-screen flex flex-col bg-void text-bone">
         <SplashScreen />
         <SmoothScroll>{children}</SmoothScroll>
         <script
