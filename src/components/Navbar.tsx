@@ -42,8 +42,13 @@ export function Navbar() {
       )}
     >
       <nav className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-        <Link href="/" className="font-display text-2xl tracking-wide text-bone">
-          VOLT<span className="text-voltage">AGE</span>
+        <Link href="/" className="flex items-baseline gap-2">
+          <span className="font-display text-2xl tracking-wide text-bone">
+            <span className="text-voltage">V</span>OLTAGE
+          </span>
+          <span className="hidden text-[0.6rem] tracking-[0.2em] text-smoke uppercase sm:inline">
+            Gym &amp; Fitness Studio
+          </span>
         </Link>
 
         <ul className="hidden items-center gap-8 lg:flex">
