@@ -14,7 +14,7 @@ export function FinalCTA() {
 
       <div className="relative mx-auto max-w-4xl px-5 text-center sm:px-8">
         <FadeIn>
-          <h2 className="font-display text-5xl uppercase leading-[0.9] text-bone sm:text-7xl">
+          <h2 className="font-display text-5xl uppercase leading-[0.95] text-bone sm:text-7xl">
             Ready to
             <br />
             power up?
