@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { brandCopy } from "@/data/gym";
@@ -12,12 +13,39 @@ const line = {
   }),
 };
 
+// Background footage is a licensed stock placeholder (Pexels License — free
+// for commercial use) until real Voltage gym-floor video is supplied.
+// Swap the file at /public/videos/hero-training.mp4 for real footage later.
+const HERO_VIDEO_SRC = "/videos/hero-training.mp4";
+
 export function Hero() {
+  const [playVideo, setPlayVideo] = useState(false);
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setPlayVideo(!reducedMotion.matches);
+    update();
+    reducedMotion.addEventListener("change", update);
+    return () => reducedMotion.removeEventListener("change", update);
+  }, []);
+
   return (
     <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-void">
+      {playVideo && (
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src={HERO_VIDEO_SRC}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          aria-hidden="true"
+        />
+      )}
       <div className="absolute inset-0 voltage-grid" />
       <div className="absolute -right-40 -top-40 h-[36rem] w-[36rem] rounded-full voltage-glow opacity-20 blur-3xl" />
-      <div className="absolute inset-0 bg-gradient-to-t from-void via-void/40 to-void" />
+      <div className="absolute inset-0 bg-gradient-to-t from-void via-void/70 to-void/40" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-14 pt-28 sm:px-8 sm:pb-28 sm:pt-40">
         <motion.p
