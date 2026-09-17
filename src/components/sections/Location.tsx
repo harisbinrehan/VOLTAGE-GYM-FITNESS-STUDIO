@@ -66,7 +66,7 @@ export function Location() {
               src={`https://www.google.com/maps?q=${encodeURIComponent(
                 contact.address.mapsQuery
               )}&output=embed`}
-              className="h-full w-full min-h-[360px] grayscale invert-[0.92] contrast-[1.1]"
+              className="h-full w-full min-h-[360px]"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
